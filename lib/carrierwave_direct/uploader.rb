@@ -135,18 +135,18 @@ module CarrierWaveDirect
     def generate_policy(options)
       conditions = [
         #["starts-with", "$utf8", ""],
-        ["starts-with", "$key", key.sub(/#{Regexp.escape(FILENAME_WILDCARD)}\z/, "")]
+        #["starts-with", "$key", key.sub(/#{Regexp.escape(FILENAME_WILDCARD)}\z/, "")]
       ]
 
       conditions << ["starts-with", "$Content-Type", ""] if will_include_content_type
       conditions << {"bucket" => fog_directory}
       conditions << {"acl" => acl}
 
-      if use_action_status
-        conditions << {"success_action_status" => success_action_status}
-      else
-        conditions << {"success_action_redirect" => success_action_redirect}
-      end
+      #if use_action_status
+      #  conditions << {"success_action_status" => success_action_status}
+      #else
+      #  conditions << {"success_action_redirect" => success_action_redirect}
+      #end
 
       conditions << ["content-length-range", options[:min_file_size], options[:max_file_size]]
 
