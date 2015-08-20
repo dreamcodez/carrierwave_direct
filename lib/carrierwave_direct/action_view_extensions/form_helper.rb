@@ -28,6 +28,7 @@ module CarrierWaveDirect
             :url => record.direct_fog_url,
             :html => html_options,
             :authenticity_token => false,
+            :enforce_utf8 => false,
             :include_id => false
           )),
           &block
