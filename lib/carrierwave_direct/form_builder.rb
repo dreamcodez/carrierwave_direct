@@ -9,7 +9,7 @@ module CarrierWaveDirect
 
       fields << content_type_field(options)
 
-      fields << success_action_field(options)
+      # fields << success_action_field(options)
 
       # The file field must be the last element in the form.
       # Any element after this will be ignored by Amazon.
