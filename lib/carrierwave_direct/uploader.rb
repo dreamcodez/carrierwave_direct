@@ -135,7 +135,7 @@ module CarrierWaveDirect
     def generate_policy(options)
       conditions = [
         #["starts-with", "$utf8", ""],
-        #["starts-with", "$key", key.sub(/#{Regexp.escape(FILENAME_WILDCARD)}\z/, "")]
+        ["starts-with", "$key", key.sub(/#{Regexp.escape(FILENAME_WILDCARD)}\z/, "")]
       ]
 
       conditions << ["starts-with", "$Content-Type", ""] if will_include_content_type
