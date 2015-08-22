@@ -7,7 +7,7 @@ module CarrierWaveDirect
 
       fields = required_base_fields
 
-      # fields << content_type_field(options)
+      fields << content_type_field(options)
 
       # fields << success_action_field(options)
 
